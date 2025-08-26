@@ -1,0 +1,56 @@
+# Jekyll configuration for Paestum Tech Days 2025 GitHub Pages
+title: "Paestum Tech Days 2025 - Demo"
+description: "Risorse didattiche e demo per l'uso dell'AI nell'apprendimento e formazione"
+url: "https://massimobonanni.github.io"
+baseurl: "/Paestum-Tech-Days-2025"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Include and exclude files
+include:
+  - _pages
+exclude:
+  - .git
+  - .gitattributes
+  - LICENSE
+
+# Collections for organizing content
+collections:
+  trainer_demos:
+    output: true
+    permalink: /:collection/:name/
+  student_demos:
+    output: true
+    permalink: /:collection/:name/
+  materiale:
+    output: true
+    permalink: /:collection/:name/
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: "trainer_demos"
+    values:
+      layout: "demo"
+      category: "trainer"
+  - scope:
+      path: ""
+      type: "student_demos"
+    values:
+      layout: "demo"
+      category: "student"
+  - scope:
+      path: ""
+      type: "materiale"
+    values:
+      layout: "material"
+      category: "materiale"
