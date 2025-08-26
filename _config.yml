@@ -4,6 +4,10 @@ description: "Risorse didattiche e demo per l'uso dell'AI nell'apprendimento e f
 url: "https://massimobonanni.github.io"
 baseurl: "/Paestum-Tech-Days-2025"
 
+# GitHub repository info
+repository: "massimobonanni/Paestum-Tech-Days-2025"
+github_username: "massimobonanni"
+
 # Build settings
 markdown: kramdown
 highlighter: rouge
