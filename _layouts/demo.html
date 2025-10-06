@@ -1,0 +1,92 @@
+---
+layout: default
+---
+
+<article class="demo-content">
+  <header class="demo-header">
+    <h1>{{ page.title }}</h1>
+    {% if page.category %}
+      <p class="demo-category">Categoria: {{ page.category | capitalize }}</p>
+    {% endif %}
+  </header>
+
+  <div class="demo-body">
+    {{ content }}
+  </div>
+
+  <footer class="demo-footer">
+    <nav class="demo-navigation">
+      <a href="{{ site.baseurl }}/" class="nav-link">← Torna alla Home</a>
+      {% if page.category == "trainer" %}
+        <a href="{{ site.baseurl }}/trainer-demos/" class="nav-link">Tutte le Demo per Formatori</a>
+      {% elsif page.category == "student" %}
+        <a href="{{ site.baseurl }}/student-demos/" class="nav-link">Tutte le Demo per Studenti</a>
+      {% endif %}
+    </nav>
+  </footer>
+</article>
+
+<style>
+.demo-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.demo-header {
+  border-bottom: 2px solid #eee;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+}
+
+.demo-category {
+  color: #666;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.demo-body {
+  line-height: 1.6;
+}
+
+.demo-body code {
+  background-color: #f8f8f8;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+}
+
+.demo-body pre {
+  background-color: #f8f8f8;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin: 15px 0;
+}
+
+.demo-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.demo-navigation {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #0066cc;
+  padding: 8px 16px;
+  border: 1px solid #0066cc;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+  background-color: #0066cc;
+  color: white;
+}
+</style>

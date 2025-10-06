@@ -1,0 +1,71 @@
+---
+layout: default
+---
+
+<article class="material-content">
+  <header class="material-header">
+    <h1>{{ page.title }}</h1>
+    <p class="material-category">Materiale di supporto</p>
+  </header>
+
+  <div class="material-body">
+    {{ content }}
+  </div>
+
+  <footer class="material-footer">
+    <nav class="material-navigation">
+      <a href="{{ site.baseurl }}/" class="nav-link">← Torna alla Home</a>
+      <a href="{{ site.baseurl }}/materiale/" class="nav-link">Tutto il Materiale</a>
+    </nav>
+  </footer>
+</article>
+
+<style>
+.material-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.material-header {
+  border-bottom: 2px solid #e8f4f8;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+}
+
+.material-category {
+  color: #666;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.material-body {
+  line-height: 1.6;
+}
+
+.material-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.material-navigation {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #0066cc;
+  padding: 8px 16px;
+  border: 1px solid #0066cc;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+  background-color: #0066cc;
+  color: white;
+}
+</style>

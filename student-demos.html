@@ -1,0 +1,138 @@
+---
+layout: default
+title: "Demo per Studenti"
+permalink: /student-demos/
+---
+
+<div class="collection-page">
+  <header class="collection-header">
+    <h1>{{ page.title }}</h1>
+    <p class="collection-description">
+      Esempi pratici di utilizzo dell'AI Generativa per gli studenti per migliorare 
+      l'apprendimento, la comprensione e l'autovalutazione.
+    </p>
+  </header>
+
+  <main class="demos-list">
+    {% for demo in site.student_demos %}
+      <article class="demo-item">
+        <h2><a href="{{ demo.url | relative_url }}">{{ demo.title }}</a></h2>
+        <div class="demo-excerpt">
+          {{ demo.excerpt | strip_html | truncate: 200 }}
+        </div>
+        <a href="{{ demo.url | relative_url }}" class="read-more">Leggi di più →</a>
+      </article>
+    {% endfor %}
+  </main>
+
+  <footer class="collection-footer">
+    <nav class="collection-nav">
+      <a href="{{ site.baseurl }}/" class="nav-link">← Torna alla Home</a>
+      <a href="{{ site.baseurl }}/trainer-demos/" class="nav-link">Demo per Formatori</a>
+      <a href="{{ site.baseurl }}/materiale/" class="nav-link">Materiale di Supporto</a>
+    </nav>
+  </footer>
+</div>
+
+<style>
+.collection-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.collection-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  border-radius: 10px;
+}
+
+.collection-header h1 {
+  font-size: 2.2em;
+  margin-bottom: 15px;
+}
+
+.collection-description {
+  font-size: 1.1em;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.demos-list {
+  margin-bottom: 40px;
+}
+
+.demo-item {
+  background: white;
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.demo-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.demo-item h2 {
+  margin-bottom: 15px;
+}
+
+.demo-item h2 a {
+  text-decoration: none;
+  color: #2c3e50;
+}
+
+.demo-item h2 a:hover {
+  color: #0066cc;
+}
+
+.demo-excerpt {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.read-more {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.read-more:hover {
+  color: #004499;
+}
+
+.collection-footer {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 2px solid #eee;
+}
+
+.collection-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #0066cc;
+  padding: 10px 20px;
+  border: 2px solid #0066cc;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #0066cc;
+  color: white;
+}
+</style>
